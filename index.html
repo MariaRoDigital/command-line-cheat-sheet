@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="resources/css/reset.css" type="text/css" rel="stylesheet">
+  <link href="resources/css/styles.css" type="text/css" rel="stylesheet">
+  <link href="resources/css/font.css" type="text/css" rel="stylesheet">
+  <link href="resources/css/mediaqueries.css" type="text/css" rel="stylesheet">
+  <title>Command Line Cheat Sheet</title>
+</head>
+
+<body id="top">
+
+  <!-- header begins -->
+  <header>
+    <h1 class="header-title">Command Line Cheat Sheet</h1>
+    <p class="author">created by: Maria Rodriguez</p>
+  </header><!-- header ends -->
+
+  <!-- nav begins-->
+  <nav>
+    <span><a href="#navigating">Navigating the File System</a></span><span class="bar">|</span>
+    <span><a href="#viewing">Viewing and Changing the File System</a></span><span class="bar">|</span>
+    <span><a href="#redirecting">Redirecting Input and Ouput</a></span><span class="bar">|</span>
+    <span><a href="#configuring">Configuring the Environmnent</a></span>
+  </nav><!-- nav ends-->
+
+  <!-- main content -->
+  <main>
+
+    <!-- navigating the file system -->
+    <h2 class="title">Navigating the File System (code+meaning+example)</h2>
+    <section id="navigating">
+
+      <!-- grid headings -->
+      <div class="container hidden">
+        <div>
+          <p class="sub-title">Code</p>
+        </div>
+        <div>
+          <p class="sub-title">Meaning</p>
+        </div>
+        <div>
+          <p class="sub-title">Example</p>
+        </div>
+      </div>
+
+      <!-- $ -->
+      <div class="container">
+        <div>
+          <p class="code mono">
+            $
+          </p>
+        </div>
+        <div>
+          <p class="meaning">
+            The command line allows a user to navigate the filesystem and run built-in programs or custom scripts. In
+            Unix, the command line interface is called Bash, and the shell prompt is the $.
+          </p>
+        </div>
+        <div>
+          <p class="example mono">
+            $
+          </p>
+        </div>
+      </div>
+
+      <!-- pwd -->
+      <div class="container">
+        <div>
+          <p class="code mono">pwd</p>
+        </div>
+        <div>
+          <p class="meaning">displays the file path from the root directory to the current working directory</p>
+        </div>
+        <div>
+          <p class="example mono">$ pwd<br>/users/Maria/Downloads</p>
+        </div>
+      </div>
+
+      <!-- mkdir -->
+      <div class="container">
+        <div>
+          <p class="code mono">
+            mkdir
+          </p>
+        </div>
+        <div>
+          <p class="meaning">
+            Makes a new directory according to it's argument. If a file path is given, the new directory will be placed
+            within that directory
+          </p>
+        </div>
+        <div>
+          <p class="example mono">
+            $ mkdir new-directory <br>
+            ls<br>
+            old-directory new-directory
+          </p>
+        </div>
+      </div>
+
+      <!-- ls -->
+      <div class="container">
+        <div>
+          <p class="code mono">
+            ls
+          </p>
+        </div>
+        <div>
+          <p class="meaning">
+            Is used to list the contents of a directory. If no arguments are given, it will list the contents of the
+            current working directory
+          </p>
+        </div>
+        <div>
+          <p class="example mono">
+            $ ls Desktop<br>
+            resume.pdf<br>
+            photo.png
+          </p>
+        </div>
+      </div>
+
+      <!-- cd -->
+      <div class="container">
+        <div>
+          <p class="code mono">
+            cd
+          </p>
+        </div>
+        <div>
+          <p class="meaning">
+            Is used to move throughout the filesystem of a computer. It accepts a variety of arguments:
+            <br>
+            <br>-full file paths
+            <br>-names of children of the current directory
+            <br>-.. the parent of the current directory
+          </p>
+        </div>
+        <div>
+          <p class="example mono">
+            $ cd some-directory<br>
+            $ cd ..
+          </p>
+        </div>
+      </div>
+
+      <!-- touch -->
+      <div class="container">
+        <div>
+          <p class="code mono">
+            touch
+          </p>
+        </div>
+        <div>
+          <p class="meaning">
+            creates a new file in the current working directory with the name provided in the argument
+          </p>
+        </div>
+        <div>
+          <p class="example mono">
+            $ touch grocery-list
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- viewing and changing the file system -->
+    <h2 class="title">Viewing and Changing the File System (code+meaning+example)</h2>
+    <section id="viewing">
+
+      <!-- grid headings -->
+      <div class="container hidden">
+        <div>
+          <p class="sub-title">Code</p>
+        </div>
+        <div>
+          <p class="sub-title">Meaning</p>
+        </div>
+        <div>
+          <p class="sub-title">Example</p>
+        </div>
+      </div>
+
+      <!-- sort -->
+      <div class="container">
+        <div>
+          <p class="code mono">
+            sort
+          </p>
+        </div>
+        <div>
+          <p class="meaning">
+            Takes the standard input and order it alphabetically for the standard output (it doesn't change the file)
+          </p>
+        </div>
+        <div>
+          <p class="example mono">
+          </p>
+        </div>
+      </div>
+
+      <!-- sed -->
+      <div class="container">
+        <div>
+          <p class="code mono">
+            sed
+          </p>
+        </div>
+        <div>
+          <p class="meaning">
+            Similar to find and replace. s = the substitute command, it tells sed that you want to perform a
+            substitution
+            operation. It's the first character in the expression and is always follower by a delimiter (commonly a
+            slash
+            /). Changes won't be made to the file. Use -i option makes changes
+          </p>
+        </div>
+        <div>
+          <p class="example mono">
+            $ sed "s/find/replace/g" file.txt
+          </p>
+        </div>
+      </div>
+
+      <!-- cp -->
+      <div class="container">
+        <div>
+          <p class="code mono">
+            cp
+          </p>
+        </div>
+        <div>
+          <p class="meaning">
+            Is used to copy files or directories. The basic argument structore is: <span class="mono">cp source
+              destination</span>, where the <span class="mono">source</span> is the file/directory to copy to the <span
+              class="mono">destination</span> file/directory
+          </p>
+        </div>
+        <div>
+          <p class="example mono">
+            $ cp file1 file1_copy<br>
+            $ cp file1 file2 destination_folder
+          </p>
+        </div>
+      </div>
+
+      <p class="full-width">.bak is commonly used to notate a file as a backup of a file with the same name</p>
+
+      <!-- mv -->
+      <div class="container">
+        <div>
+          <p class="code mono">
+            mv
+          </p>
+        </div>
+        <div>
+          <p class="meaning">
+            Is used to move a file into a directory. Use <span class="mono">mv</span> with the source file as the first
+            argument and the destination folder as the second argument
+          </p>
+        </div>
+        <div>
+          <p class="example mono">
+            $ mv index.html website/
+          </p>
+        </div>
+      </div>
+
+      <!-- rm -->
+      <div class="container">
+        <div>
+          <p class="code mono">
+            rm
+          </p>
+        </div>
+        <div>
+          <p class="meaning">
+            Is used to delete files and directories. The <span class="mono">-r</span> flag deletes a directory and all
+            of
+            its files and directories (rm -r).
+          </p>
+        </div>
+        <div>
+          <p class="example mono">
+            $ rm -r bad_selfies
+          </p>
+        </div>
+      </div>
+
+      <!-- ls options -->
+      <div class="container">
+        <div>
+          <p class="code mono">
+            ls &lt;options&gt;
+          </p>
+        </div>
+        <div>
+          <p class="meaning">
+            Is used to list the contents of a directory. It can be used combined with the following command options:<br>
+          </p>
+        </div>
+        <div>
+          <p class="example mono">
+            $ ls -a<br>
+            $ ls -l<br>
+            $ ls -t
+          </p>
+        </div>
+      </div>
+    </section><!-- end of viewing and changing the file system -->
+
+    <p class="back-to-top-link">
+      <a href="#top">back to top</a>
+    </p>
+
+    <!-- redirecting input and output -->
+    <h2 class="title">Redirecting Input and Output</h2>
+    <section id="redirecting">
+
+      <div class="container hidden">
+        <div>
+          <p class="sub-title">
+            Code
+          </p>
+        </div>
+        <div>
+          <p class="sub-title">Meaning</p>
+        </div>
+        <div>
+          <p class="sub-title">Example</p>
+        </div>
+      </div>
+
+      <!-- append redirect shell command -->
+      <div class="container">
+        <div>
+          <p class="code mono">
+            &gt;&gt;
+          </p>
+        </div>
+        <div>
+          <p class="meaning">
+            The <span class="mono">&gt;&gt;</span> is used to redirect the standard output of the command on the
+            and
+            append it (add) it to the end of the file on the right.
+          </p>
+        </div>
+        <div>
+          <p class="example mono">
+            echo "Hello World!" &gt;&gt; greeting.txt
+          </p>
+        </div>
+      </div>
+
+      <!-- pipe shell command -->
+      <div class="container">
+        <div>
+          <p class="code mono">
+            |
+          </p>
+        </div>
+        <div>
+          <p class="meaning">
+            Is used to <span class="italic">pipe</span>, or transfer, the standard output from the command on it's
+            into the standard input of the command on it's right
+          </p>
+        </div>
+        <div>
+          <p class="example mono">
+            echo "Hello World" | wc -w (uses word count command with word option to output the words)
+          </p>
+        </div>
+      </div>
+
+      <!-- redirecting output -->
+      <div class="container">
+        <div>
+          <p class="code mono">
+            &gt;
+          </p>
+        </div>
+        <div>
+          <p class="meaning">
+            Is used to redirect output by taking the output from the command on the and passing as input to the
+            file
+            on the right.
+          </p>
+        </div>
+        <div>
+          <p class="example mono">
+            echo "Hello" > hello.txt
+          </p>
+        </div>
+      </div>
+
+      <!-- cat -->
+      <div class="container">
+        <div>
+          <p class="code mono">
+            cat
+          </p>
+        </div>
+        <div>
+          <p class="meaning">
+            displays the contents of one or more files to the terminal.
+          </p>
+        </div>
+        <div>
+          <p class="example mono">
+            $ cat poem.txt<br>
+            $ cat poem.txt kitties.txt
+          </p>
+        </div>
+      </div>
+
+      <!-- grep -->
+      <div class="container">
+        <div>
+          <p class="code mono">
+            grep
+          </p>
+        </div>
+        <div>
+          <p class="meaning">
+            is used to search files for lines that match a pattern and returns the results. Various options can be
+            specified along with the <span class="mono">grep</span> command to specify the search. An option of -i can
+            be
+            used to search for lines that match a pattern, case insensitive, and returns the result.
+          </p>
+        </div>
+        <div>
+          <p class="example mono">
+            grep 'sonny' names.txt
+          </p>
+        </div>
+      </div>
+
+      <!-- grep -R -->
+      <div class="container">
+        <div>
+          <p class="code mono">
+            grep -R
+          </p>
+        </div>
+        <div>
+          <p class="meaning">
+            The shell command grep has a -R option (grep -R) that searches all files in a directory, including its
+            subdirectories, and outputs filenames and lines containing matched results.
+          </p>
+        </div>
+        <div>
+          <p class="example mono">
+          </p>
+        </div>
+      </div>
+
+      <!-- grep options -->
+      <div class="container">
+        <div>
+          <p class="code mono">
+            grep options
+          </p>
+        </div>
+        <div>
+          <p class="meaning">
+          <ul>
+            <li>-c</li>
+            <li>-h</li>
+            <li>-i</li>
+            <li>-l</li>
+            <li>-n</li>
+            <li>-v</li>
+            <li>-w</li>
+          </ul>
+        </div>
+        <div>
+          <p class="example mono">
+          <ul>
+            <li>-c prints only a count of the lines that match a pattern</li>
+            <li>-h display the matched lines, but do not display the filenames</li>
+            <li>-i ignores, case for matching</li>
+            <li>-l displays list of filenames only</li>
+            <li>-n display the matched lines and their line numbers</li>
+            <li>-v prints out all the lines that do not match the pattern</li>
+            <li>-w match the whole word</li>
+          </ul>
+          </p>
+        </div>
+      </div>
+
+      <!-- uniq -->
+      <div class="container">
+        <div>
+          <p class="code mono">
+            uniq
+          </p>
+        </div>
+        <div>
+          <p class="meaning">
+            Filters ot adjacent duplicate lines in a file (best if used with <span class="mono">sort</span> to eliminate
+            duplicate entries)
+          </p>
+        </div>
+        <div>
+          <p class="example mono">
+          </p>
+        </div>
+      </div>
+
+      <!-- command line redirection -->
+      <div class="container">
+        <div>
+          <p class="code mono">
+            &gt;<br>
+            &gt;&gt;
+          </p>
+        </div>
+        <div>
+          <p class="meaning">
+            On a command line, redirection is the process of using the input/output of a file or command to use it as an
+            input for another file. It is similar but different from pipes, as it allows reading/writing from files
+            instead of only commands.
+          </p>
+        </div>
+        <div>
+          <p class="example mono">
+            ls > directories_list.txt<br>
+            ls >> directories_list.txt
+          </p>
+        </div>
+      </div>
+    </section><!-- redirecting input and output -->
+
+    <!-- configuring the environment -->
+    <h2 class="title">Configuring the Environment</h2>
+    <section id="configuring">
+
+      <div class="container hidden">
+        <div>
+          <p class="sub-title">Code</p>
+        </div>
+        <div>
+          <p class="sub-title">Meaning</p>
+        </div>
+        <div>
+          <p class="sub-title">Example</p>
+        </div>
+      </div>
+
+      <!-- env -->
+      <div class="container">
+        <div>
+          <p class="code mono">
+            env
+          </p>
+        </div>
+        <div>
+          <p class="meaning">
+            For Unix-based systems like Mac OS and Linux (not Windows), the shell command env returns a list of
+            environment variables for the current user.
+          </p>
+        </div>
+        <div>
+          <p class="example mono">
+          </p>
+        </div>
+      </div>
+
+      <!-- alias -->
+      <div class="container">
+        <div>
+          <p class="code mono">
+            alias
+          </p>
+        </div>
+        <div>
+          <p class="meaning">
+            is used to assign commonly used commands to shortcuts (or aliases). The assigned commonly used command
+            should
+            be wrapped in double quotes.
+          </p>
+        </div>
+        <div>
+          <p class="example mono">
+          </p>
+        </div>
+      </div>
+
+      <!-- source bash profile -->
+      <div class="container">
+        <div>
+          <p class="code mono">
+            source
+          </p>
+        </div>
+        <div>
+          <p class="meaning">
+            All the commands in ~/.bash_profile are executed with the shell command source ~/.bash_profile. So when
+            changes are made to ~/.bash_profile, run this command to activate the changes in the current session.
+          </p>
+        </div>
+        <div>
+          <p class="example mono">
+          </p>
+        </div>
+      </div>
+
+      <!-- history -->
+      <div class="container">
+        <div>
+          <p class="code mono">
+            history
+          </p>
+        </div>
+        <div>
+          <p class="meaning">
+            Is used to get a history of commands (also known as “events”) that were executed in the current session. The
+            command also allows us to perform operations on this list of commands that have been executed, such as
+            selecting or manipulating a command in the history.
+          </p>
+        </div>
+        <div>
+          <p class="example mono">
+          </p>
+        </div>
+      </div>
+
+      <!-- export -->
+      <div class="container">
+        <div>
+          <p class="code mono">
+            export
+          </p>
+        </div>
+        <div>
+          <p class="meaning">
+            Makes a given variable available to all child sessions initiated from the current session.
+          </p>
+        </div>
+        <div>
+          <p class="example mono">
+            export USER="Jane Doe"
+          </p>
+        </div>
+      </div>
+
+      <!-- HOME -->
+      <div class="container">
+        <div>
+          <p class="code mono">
+            HOME
+          </p>
+        </div>
+        <div>
+          <p class="meaning">
+            is an environment variable present in command line environments. It is used to get the path to the current
+            user’s home directory. This makes it easy for programs to access the home directory when needed.
+          </p>
+        </div>
+        <div>
+          <p class="example mono">
+            echo $HOME
+          </p>
+        </div>
+      </div>
+    </section><!-- end of configuring the environmnent -->
+
+    <p class="back-to-top-link">
+      <a href="#top">back to top</a>
+    </p>
+  </main>
+
+  <!-- footer begins -->
+  <footer>
+    <p>Have a business inquiry? Shoot me a message</p>
+    <p class="email bold">
+      email: <a href="mailto:mariadrodriguez.va@gmail.com">mariadrodriguez.va@gmail.com</a>
+    </p>
+  </footer><!-- footer ends -->
+
+</body>
+
+</html>
